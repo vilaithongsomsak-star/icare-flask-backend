@@ -15,7 +15,7 @@ CORS(app, resources={r"/*": {"origins": "https://predictprofit.netlify.app"}})
 
 BASE = os.path.dirname(__file__)
 
-# Load models
+# Load
 with open(os.path.join(BASE,'model_lr.pkl'),'rb') as f:
     lr_model, scaler = pickle.load(f)
 with open(os.path.join(BASE,'model_rf.pkl'),'rb') as f:
@@ -23,7 +23,7 @@ with open(os.path.join(BASE,'model_rf.pkl'),'rb') as f:
 with open(os.path.join(BASE,'model_xgb_best.pkl'),'rb') as f:
     xgb_model = pickle.load(f)
 
-df_hist = pd.read_csv(os.path.join(BASE,'models','icare_clean.csv'))
+df_hist = pd.read_csv(os.path.join(BASE, 'icare_clean.csv'))
 
 FEATURE_LIST = [
     'revenue','cost_of_sales','op_exp','other_exp','gross_profit',
