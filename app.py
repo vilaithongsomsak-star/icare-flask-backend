@@ -16,11 +16,11 @@ CORS(app, resources={r"/*": {"origins": "https://predictprofit.netlify.app"}})
 BASE = os.path.dirname(__file__)
 
 # Load models
-with open(os.path.join(BASE,'models','model_lr.pkl'),'rb') as f:
+with open(os.path.join(BASE,'model_lr.pkl'),'rb') as f:
     lr_model, scaler = pickle.load(f)
-with open(os.path.join(BASE,'models','model_rf.pkl'),'rb') as f:
+with open(os.path.join(BASE,'model_rf.pkl'),'rb') as f:
     rf_model = pickle.load(f)
-with open(os.path.join(BASE,'models','model_xgb_best.pkl'),'rb') as f:
+with open(os.path.join(BASE,'model_xgb_best.pkl'),'rb') as f:
     xgb_model = pickle.load(f)
 
 df_hist = pd.read_csv(os.path.join(BASE,'models','icare_clean.csv'))
