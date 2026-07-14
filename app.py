@@ -11,7 +11,7 @@ import pickle
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://predictprofit.netlify.app"}})
 
 BASE = os.path.dirname(__file__)
 
